@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
@@ -48,7 +49,7 @@ class DetailsFragment : Fragment() {
         viewModel.navToShare.observe(viewLifecycleOwner, Observer {
             if (null != it) {
                 onShare()
-                viewModel.displayInternetComplete()
+                viewModel.displayShareComplete()
             }
         })
 

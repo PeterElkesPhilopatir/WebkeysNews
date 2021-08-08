@@ -18,11 +18,13 @@ class DetailsViewModel(@Suppress("UNUSED_PARAMETER") article: Article, app: Appl
     private val _navToShare = MutableLiveData<String>()
     val navToShare: LiveData<String>
         get() = _navToShare
+
+
     init {
         _selectedProperty.value = article
-        Log.i("IMG_SRC",article.urlToImage)
-        Log.i("DATE",article.publishedAt)
-        Log.i("SRC_LINK",article.url)
+        Log.i("IMG_SRC", article.urlToImage)
+        Log.i("DATE", article.publishedAt)
+        Log.i("SRC_LINK", article.url)
     }
 
 
@@ -41,4 +43,8 @@ class DetailsViewModel(@Suppress("UNUSED_PARAMETER") article: Article, app: Appl
     fun displayShareComplete() {
         _navToShare.value = null
     }
+
+
+
+
 }
