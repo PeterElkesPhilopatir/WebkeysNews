@@ -16,7 +16,7 @@ import java.util.ArrayList
 
 class NewsViewModel : ViewModel(){
     private var viewModelJob = Job()
-    private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.IO)
+    private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
     enum class ApiStatus { LOADING, ERROR, DONE }
 
     private val _data = MutableLiveData<List<Article>>()
