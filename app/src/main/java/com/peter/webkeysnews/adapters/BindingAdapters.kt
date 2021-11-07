@@ -36,8 +36,8 @@ fun bindImage(imgView: ImageView, imgUrl: String?) {
 
 @BindingAdapter("listData")
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<Article>?) {
-    val adapter = recyclerView.adapter as PhotoGridAdapter
-    adapter.submitList(data)
+//    val adapter = recyclerView.adapter as PhotoGridAdapter
+//    adapter.submitList(data)
 }
 
 @BindingAdapter("txtBinder")

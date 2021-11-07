@@ -10,8 +10,8 @@ data class Article(
     var urlToImage: String,
     var title: String,
     var url: String,
-    var auther :String,
+    var auther: String,
     var description: String,
     var publishedAt: String,
     var content: String
-): Parcelable
+) : Parcelable

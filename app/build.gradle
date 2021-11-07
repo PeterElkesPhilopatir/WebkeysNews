@@ -103,7 +103,7 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:1.1.0"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    implementation "androidx.paging:paging-runtime:$paging_version" // For Kotlin use paging-runtime-ktx
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version" // For Kotlin use paging-runtime-ktx
     implementation 'com.android.support:multidex:1.0.3'
 
 

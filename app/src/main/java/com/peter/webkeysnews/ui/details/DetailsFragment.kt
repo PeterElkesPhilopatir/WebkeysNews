@@ -25,9 +25,9 @@ class DetailsFragment : Fragment() {
     ): View? {
 
         @Suppress("UNUSED_VARIABLE")
-        val application = requireNotNull(activity).application
 
         val binding = FragmentDetailsBinding.inflate(inflater)
+        val application = requireNotNull(activity).application
 
         val article = DetailsFragmentArgs.fromBundle(arguments!!).selectedProperty
 
@@ -38,6 +38,7 @@ class DetailsFragment : Fragment() {
         binding.viewModel = viewModel
 
         binding.lifecycleOwner = this
+
         viewModel.navToInternet.observe(viewLifecycleOwner, Observer {
             if (null != it) {
                 val i = Intent(Intent.ACTION_VIEW)

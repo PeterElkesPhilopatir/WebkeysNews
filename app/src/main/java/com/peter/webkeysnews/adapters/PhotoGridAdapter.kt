@@ -2,6 +2,7 @@ package com.peter.webkeysnews.ui.news
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -9,7 +10,7 @@ import com.peter.webkeysnews.databinding.GridViewItemBinding
 import com.peter.webkeysnews.pojo.Article
 
 class PhotoGridAdapter(val onClickListener: OnClickListener) :
-    ListAdapter<Article, NewsViewHolder>(DiffCallback) {
+    PagingDataAdapter<Article, NewsViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):
             NewsViewHolder {
@@ -17,10 +18,10 @@ class PhotoGridAdapter(val onClickListener: OnClickListener) :
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        val news = getItem(position)
-        holder.bind(news)
-        holder.itemView.setOnClickListener{
-            onClickListener.onClick(news)
+
+        getItem(position)?.let { holder.bind(it) }
+        holder.itemView.setOnClickListener {
+            getItem(position)?.let { it1 -> onClickListener.onClick(it1) }
         }
     }
 
@@ -44,7 +45,7 @@ class NewsViewHolder(private var binding: GridViewItemBinding) :
 }
 
 class OnClickListener(val clickListener: (article: Article) -> Unit) {
-    fun onClick(article:Article) = clickListener(article)
+    fun onClick(article: Article) = clickListener(article)
 }
 
 
